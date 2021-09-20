@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Finder</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript">
+        function find()
+        {
+            var query = document.getElementById('query').value;
+            eel.test(query);
+        }
+
+        eel.expose(setResult);
+        function setResult(result)
+        {
+            $('#box2').show();
+            $('#res').html(result);
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+          width: 20px;
+        }
+        body{
+            margin:0px;
+            overflow:hidden;
+        }
+        #topimg{
+            height:100vh;
+            width:100%;
+        }
+        #box1
+        {
+            height:400px;
+            width:650px;
+            position:absolute;
+            top:50%;
+            left:30%;
+            transform:translate(-50%,-50%);
+            z-index:9999;
+        }
+        #box2{
+            width:650px;
+            height:400px;
+            padding:10px;
+            position:absolute;
+            top:60%;
+            left:30%;
+            transform:translate(-50%,-50%);
+            z-index:9999;
+            display:none;
+        }
+
+        #query{
+            width:600px;
+            background-color:transparent;
+            border:none;
+            border-bottom:2px solid #6f7178;
+            margin-bottom:40px;
+            font-family:arial;
+            font-size:30px;
+            color:#121212;
+            outline:none;
+            padding-left:5px;
+            float:left;
+        }
+        #search{
+            height:40px;
+            width:40px;
+            background-color:#4103db;
+            font-family:arial;
+            font-size:12px;
+            color:white;
+            border:none;
+            outline:none;
+            border-radius:20px;
+            float:right;
+        }
+        #search img{
+            height:20px;
+            width:20px;
+            position:relative;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+        #res{
+            width:600px;
+            height:400px;
+            background:white;
+            padding:10px;
+           // overflow:hidden;
+            overflow-y:scroll;
+            color:#121212;
+            border-radius:10px;
+            font-size:15px;
+            text-align:justify;
+            box-shadow:0px 0px 10px rgba(0,0,0,.05);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="box1">
+
+        <input type="text" id="query" placeholder="Enter your query.."/>
+        <div id="search" onclick="find()"><img src="search icon.png"/></div>
+        <!--<input type="button" id="search" onclick="find()" value=""/>-->
+    </div>
+
+    <div id="box2">
+        <div id="res"></div>
+    </div>
+
+    <img src="BG.jpg" id="topimg" />
+</body>
+</html>
