@@ -6,6 +6,8 @@
 - howdoi : for answering basic programming questions
 
 <b>Screen 1:</b>
+<img src="Output1.JPG"/>
 
 <b>Screen 2:</b>
+<img src="Output2.JPG"/>
 
